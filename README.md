@@ -1,12 +1,12 @@
 # MelodyHue – Backend (FastAPI)
 
-[![GitHub Release](https://img.shields.io/github/v/release/laxe4k/melodyhue-backend)](https://github.com/laxe4k/melodyhue-backend/releases)
-[![GitHub Release Date](https://img.shields.io/github/release-date/laxe4k/melodyhue-backend)](https://github.com/laxe4k/melodyhue-backend/releases)
-[![GitHub License](https://img.shields.io/github/license/laxe4k/melodyhue-backend)](https://github.com/laxe4k/melodyhue-backend/blob/main/LICENSE)
-[![GitHub contributors](https://img.shields.io/github/contributors/laxe4k/melodyhue-backend)](https://github.com/laxe4k/melodyhue-backend/graphs/contributors)
-[![GitHub Packages](https://img.shields.io/badge/GitHub%20Packages-ghcr.io-blue)](https://github.com/laxe4k/melodyhue-backend/pkgs/container/melodyhue-backend)
-[![GitHub Issues](https://img.shields.io/github/issues/laxe4k/melodyhue-backend)](https://github.com/laxe4k/melodyhue-backend/issues)
-[![CI/CD - Docker](https://github.com/laxe4k/melodyhue-backend/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/laxe4k/melodyhue-backend/actions/workflows/ci-cd.yml)
+[![GitHub Release](https://img.shields.io/github/v/release/melodyhue/backend)](https://github.com/melodyhue/backend/releases)
+[![GitHub Release Date](https://img.shields.io/github/release-date/melodyhue/backend)](https://github.com/melodyhue/backend/releases)
+[![GitHub License](https://img.shields.io/github/license/melodyhue/backend)](https://github.com/melodyhue/backend/blob/main/LICENSE)
+[![GitHub contributors](https://img.shields.io/github/contributors/melodyhue/backend)](https://github.com/melodyhue/backend/graphs/contributors)
+[![GitHub Packages](https://img.shields.io/badge/GitHub%20Packages-ghcr.io-blue)](https://github.com/melodyhue/backend/pkgs/container/backend)
+[![GitHub Issues](https://img.shields.io/github/issues/melodyhue/backend)](https://github.com/melodyhue/backend/issues)
+[![CI/CD - Docker](https://github.com/melodyhue/backend/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/melodyhue/backend/actions/workflows/ci-cd.yml)
 
 API FastAPI multi‑utilisateurs qui expose la musique Spotify en cours et calcule une couleur dominante depuis la pochette. Auth JWT (access/refresh), gestion des overlays (nom + template), couleur d’overlay héritée des paramètres utilisateur, et endpoints publics pour l’affichage.
 
@@ -41,7 +41,7 @@ python -m uvicorn app.asgi:app --host 0.0.0.0 --port 8765 --reload
 
 ### B. Docker Compose
 
-`docker-compose.yml` fournit un service `melodyhue-backend` (port hôte 8494 par défaut). Adaptez vos variables .env puis lancez:
+`docker-compose.yml` fournit un service `backend` (port hôte 8494 par défaut). Adaptez vos variables .env puis lancez:
 ```powershell
 docker compose up -d
 ```
@@ -139,7 +139,7 @@ Astuce: en dev, `EMAIL_DEBUG=true` renvoie aussi le token brut dans la réponse.
 
 ## 🔗 Liens
 
-- Frontend: https://github.com/laxe4k/melodyhue-frontend
+- Frontend: https://github.com/melodyhue/frontend
 
 —
 
