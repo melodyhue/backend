@@ -46,6 +46,7 @@ class SpotifyClient:
 
         self._last_spotify_check = 0
         self._last_spotify_result = None
+        self.min_request_interval = float(os.getenv("SPOTIFY_REQUEST_INTERVAL", 3.0))
 
         self._setup_spotify()
 
@@ -253,7 +254,7 @@ class SpotifyClient:
             return None
 
         now = time.time()
-        if now - self._last_spotify_check < 1:
+        if now - self._last_spotify_check < self.min_request_interval:
             return self._last_spotify_result
 
         self._last_spotify_check = now
@@ -273,6 +274,14 @@ class SpotifyClient:
                     headers=headers,
                     timeout=3,
                 )
+
+                if response.status_code == 429:
+                    retry_after = int(response.headers.get("Retry-After", 5))
+                    logging.warning(
+                        f"⚠️ Limite de taux Spotify atteinte. Pause de {retry_after}s."
+                    )
+                    self._last_spotify_check = now + retry_after
+                    return self._last_spotify_result
 
                 if response.status_code == 200:
                     data = response.json()
