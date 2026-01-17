@@ -25,7 +25,7 @@ class SpotifyColorExtractor:
 
         self.monitoring_enabled = True
         self.monitoring_thread = None
-        self.spotify_check_interval = 1
+        self.spotify_check_interval = float(os.getenv("SPOTIFY_POLLING_INTERVAL", 3.0))
         self.last_spotify_check = 0
 
         self.stats = {"requests": 0, "cache_hits": 0, "extractions": 0, "errors": 0}
